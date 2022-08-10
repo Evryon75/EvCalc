@@ -1,0 +1,42 @@
+output("Choose a number for X:");
+let x = input("num");
+output("Choose an operator [+, -, *, /]:");
+let op = input("str");
+output("Choose a number for Y:");
+let y = input("num");
+output("Operation:", x, op, y);
+fun calculate = (k, l, op) {
+    let result = 0;
+    fun add = (s, z) {
+        return s + z;
+    };
+    fun sub = (s, z) {
+        return s - z;
+    };
+    fun mul = (s, z) {
+        return s * z;
+    };
+    fun div = (s, z) {
+        return s / z;
+    };
+    if op == "+" {
+        result = add(k, l);
+    } else {
+        if op == "-" {
+            result = sub(k, l);
+        } else {
+            if op == "*" {
+                result = mul(k, l);
+            } else {
+                if op == "/" {
+                    result = div(k, l);
+                } else {
+                    abort("Unknown operator");
+                };
+            };
+        };
+    };
+    return result;
+};
+let result = calculate(x, y, op);
+output(result);
